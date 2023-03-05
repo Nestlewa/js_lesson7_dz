@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="wrapper__task math-task">
+        <a href="../index.html" class="math-task__link">До списку задач</a>
+        <p class="math-task__description">
+          Задача 4. Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість
+          парних, кількість додатних, кількість більших за 100.
+        </p>
+        <script>
+          function numbersQuantity(num1, num2, num3) {
+            let evenQuantity = 0
+            let positiveQuantity = 0
+            let moreThan100Quantity = 0
+
+            if (num1 % 2 === 0) evenQuantity++
+            if (num2 % 2 === 0) evenQuantity++
+            if (num3 % 2 === 0) evenQuantity++
+
+            if (num1 > 0) positiveQuantity++
+            if (num2 > 0) positiveQuantity++
+            if (num3 > 0) positiveQuantity++
+
+            if (num1 > 100) moreThan100Quantity++
+            if (num2 > 100) moreThan100Quantity++
+            if (num3 > 100) moreThan100Quantity++
+
+            return `Кількість парних чисел: ${evenQuantity} кількість додатних: ${positiveQuantity} кількість більших за 100: ${moreThan100Quantity}`
+          }
+          const firstUserNumber = parseFloat(prompt("Please enter your first number"))
+          const secondUserNumber = parseFloat(prompt("Please enter your second number"))
+          const thirdUserNumber = parseFloat(prompt("Please enter your third number"))
+
+          const result = numbersQuantity(firstUserNumber, secondUserNumber, thirdUserNumber)
+          document.write(`<p>${result}</p>`)
+        </script>
+      </section>
+    </div>
+  </body>
+</html>

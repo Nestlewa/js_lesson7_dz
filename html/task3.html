@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="wrapper__task math-task">
+        <a href="../index.html" class="math-task__link">До списку задач</a>
+        <p class="math-task__description">
+          Задача 3. Створити окремі функції, які для 4 чисел знаходять: 1)суму; 2)добуток; 3)середнє арифметичне;
+          4)мінімальне значення.
+        </p>
+        <script>
+          function getSum(num1, num2, num3, num4) {
+            return num1 + num2 + num3 + num4
+          }
+          function getProduct(num1, num2, num3, num4) {
+            return num1 * num2 * num3 * num4
+          }
+          function getAverage(num1, num2, num3, num4) {
+            return (num1 + num2 + num3 + num4) / 4
+          }
+          function getMin(num1, num2, num3, num4) {
+            let minValue = Infinity
+            if (num1 < minValue) minValue = num1
+            else if (num2 < minValue) minValue = num2
+            else if (num3 < minValue) minValue = num3
+            else if (num4 < minValue) minValue = num4
+            return minValue
+          }
+          const firstNumber = parseFloat(prompt("Please enter first number"))
+          const secondNumber = parseFloat(prompt("Please enter second number"))
+          const thirdNumber = parseFloat(prompt("Please enter third number"))
+          const fourthNumber = parseFloat(prompt("Please enter fourth number"))
+
+          const numberSum = getSum(firstNumber, secondNumber, thirdNumber, fourthNumber)
+          const numberProduct = getProduct(firstNumber, secondNumber, thirdNumber, fourthNumber)
+          const numberAverage = getAverage(firstNumber, secondNumber, thirdNumber, fourthNumber)
+          const numberMin = getMin(firstNumber, secondNumber, thirdNumber, fourthNumber)
+
+          document.write(`
+          <p>${numberSum}</p>
+          <p>${numberProduct}</p>
+          <p>${numberAverage}</p>
+          <p>${numberMin}</p>
+          `)
+        </script>
+      </section>
+    </div>
+  </body>
+</html>

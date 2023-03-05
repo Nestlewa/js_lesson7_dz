@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Task 9</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="wrapper__task math-task">
+        <a href="../index.html" class="math-task__link">До списку задач</a>
+        <p class="math-task__description">
+          Задача 9. Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість
+          від’ємних показів температури
+        </p>
+        <script>
+          function getQuantityMinusTemperature() {
+            let counter = 0
+            for (let i = 0; i < arguments.length; i++)
+              if (arguments[i] < 0) {
+                counter++
+              }
+            return counter
+          }
+          const QuantityMinusTemperature = getQuantityMinusTemperature(-12, 20, 18, -18, -3, -7, 25, -31)
+          document.write(`<p>${QuantityMinusTemperature}</p>`)
+        </script>
+      </section>
+    </div>
+  </body>
+</html>

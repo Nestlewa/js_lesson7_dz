@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="wrapper__task math-task">
+        <a href="../index.html" class="math-task__link">До списку задач</a>
+        <p class="math-task__description">
+          Задача 5. Створити окремі функції, які переводять: Сантиметри у дюйми; Кілограми у фунти; Кілометри у милі
+        </p>
+        <script>
+          function getInches(centimeters) {
+            const KOEFICIENT_INCH_TO_CENTIMETERS = 2.54
+            const result = (centimeters / KOEFICIENT_INCH_TO_CENTIMETERS).toFixed(2)
+            return result
+          }
+
+          function getPounds(kilograms) {
+            const KOEFICIENT_POUND_TO_KILO = 0.453592
+            const result = (kilograms / KOEFICIENT_POUND_TO_KILO).toFixed(2)
+            return result
+          }
+
+          function getMiles(kilometers) {
+            const KOEFICIENT_MILE_TO_KILOMETERS = 1.609344
+            const result = (kilometers / KOEFICIENT_MILE_TO_KILOMETERS).toFixed(2)
+            return result
+          }
+
+          const centimeters = parseFloat(
+            prompt("Please enter a quantity of centimeters which you want to convert into inches")
+          )
+          const kilograms = parseFloat(
+            prompt("Please enter a quantity of kilograms which you want to convert into pounds")
+          )
+          const kilometers = parseFloat(
+            prompt("Please enter a quantity of kilometers which you want to convert into miles")
+          )
+
+          const centimetersToInches = getInches(centimeters)
+          const kilogramsToPounds = getPounds(kilograms)
+          const kilometersToMiles = getMiles(kilometers)
+
+          document.write(`
+          <p>в ${centimeters} сантиметрах ${centimetersToInches} дюймів</p>
+          <p>в ${kilograms} кілограмах ${kilogramsToPounds} фунтів</p>
+          <p>в ${kilometers} кілометрах ${kilometersToMiles} миль</p>
+          `)
+        </script>
+      </section>
+    </div>
+  </body>
+</html>
